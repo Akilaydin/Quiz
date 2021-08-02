@@ -24,7 +24,7 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField]
     private Text _questionText;
     [SerializeField]
-    private CardSpawner _cardSpawner;
+    private Spawner _cardSpawner;
     
     private void Start()
     {

@@ -1,16 +1,14 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class AnswerChecker : MonoBehaviour
+public class AnswerChecker : Identifier
 {
     public UnityEvent<GameObject> RightCardChosen;
     public UnityEvent<GameObject> WrongCardChosen;
 
-    private string _rightIdentifier;
-
     public void CheckAnswer(GameObject selectedCard)
     {
-        if (_rightIdentifier == selectedCard.GetComponent<Card>().GetIdentifier())
+        if (GetIdentifier() == selectedCard.GetComponent<Card>().GetIdentifier())
         {
             RightCardChosen.Invoke(selectedCard);
         }
@@ -18,9 +16,5 @@ public class AnswerChecker : MonoBehaviour
         {
             WrongCardChosen.Invoke(selectedCard);
         }
-    }
-    public void SetRightIdentifier(string rightIdentifier)
-    {
-        _rightIdentifier = rightIdentifier;
     }
 }
