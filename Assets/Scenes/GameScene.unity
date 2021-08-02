@@ -156,8 +156,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 805347406}
-        m_TargetAssemblyTypeName: LoadingScreenAnimator, Assembly-CSharp
-        m_MethodName: FadeOutLoadingScreen
+        m_TargetAssemblyTypeName: ImageAnimator, Assembly-CSharp
+        m_MethodName: FadeOut
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -171,8 +171,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 805347406}
-        m_TargetAssemblyTypeName: LoadingScreenAnimator, Assembly-CSharp
-        m_MethodName: FadeInLoadingScreen
+        m_TargetAssemblyTypeName: ImageAnimator, Assembly-CSharp
+        m_MethodName: FadeIn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -810,7 +810,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49a49c4b9037aa248bf3f69e2f03ffc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionText: {fileID: 1145561338}
+  _graphicElement: {fileID: 1145561338}
+  _fadeInRate: 1
+  _fadeOutRate: 0
   _fadeInDuration: 0.2
   _fadeOutDuration: 0.2
 --- !u!114 &805347405
@@ -825,7 +827,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0271b1a7b559fb048855d74257a58df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _panel: {fileID: 1214373518}
+  _graphicElement: {fileID: 1214373518}
+  _fadeInRate: 0.5
+  _fadeOutRate: 0
   _fadeInDuration: 1
   _fadeOutDuration: 0.2
 --- !u!114 &805347406
@@ -840,7 +844,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e04ec2f5e2dca548b6159cd2a390fa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadingScreen: {fileID: 193389421}
+  _graphicElement: {fileID: 193389421}
+  _fadeInRate: 1
+  _fadeOutRate: 0
   _fadeInDuration: 1
   _fadeOutDuration: 0.2
 --- !u!1 &921539112
@@ -1081,8 +1087,8 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 805347404}
-        m_TargetAssemblyTypeName: TextAnimator, Assembly-CSharp
-        m_MethodName: FadeOutText
+        m_TargetAssemblyTypeName: ImageAnimator, Assembly-CSharp
+        m_MethodName: FadeOut
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1105,8 +1111,8 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 805347405}
-        m_TargetAssemblyTypeName: PanelAnimator, Assembly-CSharp
-        m_MethodName: FadeInPanel
+        m_TargetAssemblyTypeName: ImageAnimator, Assembly-CSharp
+        m_MethodName: FadeIn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1556,9 +1562,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 805347404}
-        m_TargetAssemblyTypeName: TextAnimator, Assembly-CSharp
-        m_MethodName: FadeInText
-        m_Mode: 0
+        m_TargetAssemblyTypeName: ImageAnimator, Assembly-CSharp
+        m_MethodName: FadeIn
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Card : MonoBehaviour
+public class Card : MonoBehaviour, IPointerClickHandler
 {
     private string _identifier;
 
@@ -21,5 +22,11 @@ public class Card : MonoBehaviour
         {
             throw new System.ArgumentNullException();
         }
+    }
+
+    public void OnPointerClick(PointerEventData pointerEventData)
+    {
+        //Output to console the clicked GameObject's name and the following message. You can replace this with your own actions for when clicking the GameObject.
+        Debug.Log(name + " Game Object Clicked!");
     }
 }

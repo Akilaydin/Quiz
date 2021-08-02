@@ -13,12 +13,14 @@ public class ScenesLoader : MonoBehaviour
     private float delayBeforeLoadScene; //Needs to show loading screen.
     public void Restart()
     {
+        SceneBeginsToRestart.Invoke();
         StartCoroutine(RestartCoroutine());
     }
 
     private IEnumerator RestartCoroutine()
     {
         yield return new WaitForSeconds(delayBeforeLoadScene);
+        SceneRestarted.Invoke();
         SceneManager.LoadScene(0);
     }
 }
