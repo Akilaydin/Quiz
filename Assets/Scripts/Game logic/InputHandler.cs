@@ -1,35 +1,16 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class InputHandler : MonoBehaviour
 {
     public UnityEvent<GameObject> CardSelected;
 
-    [SerializeField]
-    private GraphicRaycaster _graphicRaycaster;
-
     private bool _isInputAllowed = false;
-
-    private void Update()
+    public void OnCardClicked(GameObject card)
     {
-        if (Input.GetMouseButtonUp(0) && _isInputAllowed)
+        if (_isInputAllowed == true)
         {
-            PointerEventData pointerEventData = new PointerEventData(null);
-            pointerEventData.position = Input.mousePosition;
-            List<RaycastResult> results = new List<RaycastResult>();
-            _graphicRaycaster.Raycast(pointerEventData, results);
-
-            if (results.Count > 0 && results.Count < 2)
-            {
-                if (results[0].gameObject.GetComponent<Card>())
-                {
-                    GameObject card = results[0].gameObject;
-                    CardSelected.Invoke(card);
-                }
-            }
+            CardSelected.Invoke(card);
         }
     }
 

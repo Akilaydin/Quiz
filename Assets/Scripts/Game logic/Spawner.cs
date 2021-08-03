@@ -64,7 +64,6 @@ public class Spawner : MonoBehaviour
 
                 GameObject card = _cardFactory.CreateNewCard(cardData, frame.transform);
                 _generatedCards.Add(card.GetComponent<Card>());
-
                 CardGenerated.Invoke(card);
                 yield return new WaitForSeconds(cardSpawnDelay);
             }
